@@ -2,20 +2,16 @@ from pytemplate.domain.models import Operands
 
 
 class Calculator:
-    @staticmethod
-    def add(operands: Operands) -> int:
+    def add(self, operands: Operands) -> int:
         return operands.first_operand + operands.second_operand
 
-    @staticmethod
-    def subtract(operands: Operands) -> int:
+    def subtract(self, operands: Operands) -> int:
         return operands.first_operand - operands.second_operand
 
-    @staticmethod
-    def multiply(operands: Operands) -> int:
+    def multiply(self, operands: Operands) -> int:
         return operands.first_operand * operands.second_operand
 
-    @staticmethod
-    def divide(operands: Operands) -> int:
+    def divide(self, operands: Operands) -> int:
         if operands.second_operand == 0:
             raise ValueError("Cannot divide by zero")
         return operands.first_operand / operands.second_operand
